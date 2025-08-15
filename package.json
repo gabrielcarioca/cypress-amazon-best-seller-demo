@@ -6,12 +6,13 @@
   "scripts": {
     "cy:open": "cypress open --e2e",
     "cy:run": "cypress run --browser chrome --e2e",
-    "test:amazon": "cypress run --broser chrome --spec cypress/e2e/amazon/best_seller_price.cy.ts",
+    "test:amazon": "cypress run --browser chrome --spec cypress/e2e/amazon/best_seller_price.cy.ts",
     "test:amazon:headed": "cypress run --e2e --browser chrome --headed --spec cypress/e2e/amazon/best_seller_price.cy.ts"
   },
   "devDependencies": {
     "@types/node": "^24.3.0",
     "cypress": "^13.17.0",
+    "cypress-mochawesome-reporter": "^4.0.0",
     "dotenv": "^17.2.1",
     "eslint": "^9.33.0",
     "prettier": "^3.6.2",

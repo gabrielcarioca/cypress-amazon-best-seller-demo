@@ -11,8 +11,8 @@
 
 const PRICE_THRESHOLD = Number(Cypress.env('PRICE_THRESHOLD') ?? 100);
 
-describe('Amazon - Best Sellerss price check (TV & Video)', () => {
-    it(`fails if 2nd Best Seller > $$(PRICE_THRESHOLD)`, () => {
+describe('Amazon - Best Sellers price check (TV & Video)', () => {
+    it(`fails if 2nd Best Seller > $${PRICE_THRESHOLD}`, () => {
         cy.visit('/');
         cy.closeAmazonPopups();
         cy.openAmazonHamburger();

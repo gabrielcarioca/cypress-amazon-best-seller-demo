@@ -1,6 +1,7 @@
 import { defineConfig } from "cypress";
 import 'dotenv/config'
 import path from "node:path";
+import cypressMochawesomeReporter from 'cypress-mochawesome-reporter/plugin';
 
 export default defineConfig({
     video: false,
@@ -8,6 +9,20 @@ export default defineConfig({
     viewportHeight: 800,
     defaultCommandTimeout: 15000,
     retries: {runMode: 2, openMode: 0},
+
+    screenshotOnRunFailure: true,
+    screenshotsFolder: 'cypress/screenshots',
+    videosFolder: 'cypress/videos',
+
+    reporter: 'cypress-mochawesome-reporter',
+    reporterOptions: {
+        reportDir: 'cypress/reports',
+        reportFilename: 'index',
+        overwrite: true,
+        charts: true,
+        embeddedScreenshots: true,
+        inlineAssets: true,
+    },
 
     env: {
         PRICE_THRESHOLD: 100,
@@ -40,7 +55,8 @@ export default defineConfig({
             if (process.env.PRICE_THRESHOLD) {
                 config.env.PRICE_THRESHOLD = Number(process.env.PRICE_THRESHOLD);
             }
-
+            
+            cypressMochawesomeReporter(on);
             return config;
         }
     },

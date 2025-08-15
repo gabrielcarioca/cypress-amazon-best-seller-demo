@@ -4,4 +4,14 @@ node_modules
 cypress/videos
 cypress/screenshots
 
+# Cypress artifacts
+cypress/reports/*
+!cypress/reports/.gitkeep
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+
+mochawesome-report/
+mochawesome*.json
+
 .env
