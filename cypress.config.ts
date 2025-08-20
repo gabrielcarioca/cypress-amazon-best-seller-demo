@@ -39,7 +39,7 @@ export default defineConfig({
                     return null;
                 }
             });
-
+            
             on("before:browser:launch", (browser, launchOptions) => {
                 if (browser.family === "chromium") {
                     launchOptions.args.push("--lang=en-US");
@@ -55,7 +55,8 @@ export default defineConfig({
             if (process.env.PRICE_THRESHOLD) {
                 config.env.PRICE_THRESHOLD = Number(process.env.PRICE_THRESHOLD);
             }
-            
+
+            // register mochawesome plugin
             cypressMochawesomeReporter(on);
             return config;
         }
