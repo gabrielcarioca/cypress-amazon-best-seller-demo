@@ -94,9 +94,9 @@ npx cypress open --e2e
 │  │  ├─ commands.ts                  # custom commands (zip/menu/best-sellers helpers)
 │  │  └─ e2e.ts                       # imports ./commands and the reporter register
 │  └─ reports/                        # mochawesome HTML (gitignored)
-├─ cypress.config.ts                   # loads .env, baseUrl, reporter, plugins
+├─ cypress.config.ts                  # loads .env, baseUrl, reporter, plugins
 ├─ package.json
-├─ .env                                # ZIP, PRICE_THRESHOLD, BASE_URL
+├─ .env                               # ZIP, PRICE_THRESHOLD, BASE_URL
 └─ .gitignore
 ```
 
